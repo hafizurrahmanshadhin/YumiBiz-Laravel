@@ -1,0 +1,1777 @@
+{
+	"info": {
+		"_postman_id": "9286f5b2-c654-4f94-a194-fda3590d6de1",
+		"name": "Kaam_Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32086283",
+		"_collection_link": "https://www.postman.com/shadhinworkspace/workspace/kaam-services/collection/32086283-9286f5b2-c654-4f94-a194-fda3590d6de1?action=share&source=collection_link&creator=32086283"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hafizur Rahman Shadhin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "shadhin666@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "agree_to_terms",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_name",
+									"value": "shadhin666",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "26",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "looking_for",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "industry",
+									"value": "Technology",
+									"type": "text"
+								},
+								{
+									"key": "other_industry",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "years_of_experience",
+									"value": "1-3 years",
+									"type": "text"
+								},
+								{
+									"key": "areas_of_expertise[]",
+									"value": "['Marketing', 'Sales']",
+									"type": "text"
+								},
+								{
+									"key": "other_expertise[]",
+									"value": "['AI', 'ML']",
+									"type": "text"
+								},
+								{
+									"key": "support_offer[]",
+									"value": "['Mentorship', 'Investment']",
+									"type": "text"
+								},
+								{
+									"key": "other_support_offer[]",
+									"value": "['Consulting', 'Business']",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": [
+										"/D:/Project/lsebert/trader-support-main/assets/images/own-profile.png",
+										"/D:/Project/lsebert/trader-support-main/assets/images/match-slider (1).png"
+									]
+								},
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Dhaka",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Mohammadpur",
+									"type": "text"
+								},
+								{
+									"key": "province",
+									"value": "1207",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "shadhin666@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "shadhin666@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/send-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"send-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "shadhin666@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "otp",
+									"value": "3875",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/verify-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "shadhin666@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "google.login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "ya29.a0AcM612yDfCAP9KbyV5tAeCc_pYJkWk-fTShJlkrouLlPENlz1zWtUt9OZusDlvQvWlJ_fqIC21DQ4Srtft9CF8ZB3dSc8Z7gCT1BwEQLTXP02RpeknBh5XTjwezmpgpOQx4My2IUyvn0jgKTiCWm5WLGq_LllaQoQQaCgYKAYQSARISFQHGX2MiqHPV5nJPBF33oRpfZNwXzA0169\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login/google",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login",
+								"google"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/users/filter?city=Dhaka",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "Dhaka"
+								},
+								{
+									"key": "state",
+									"value": "Dhaka Division",
+									"disabled": true
+								},
+								{
+									"key": "province",
+									"value": "Khulna",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/users/search?search=shadhin",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "shadhin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Shadhin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@user.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user_name",
+									"value": "updated user name",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01911223344",
+									"type": "text"
+								},
+								{
+									"key": "willing_to_invest",
+									"value": "120 K",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "This is my updated bio",
+									"type": "text"
+								},
+								{
+									"key": "looking_for",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.education.add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "degree",
+									"value": "SSC",
+									"type": "text"
+								},
+								{
+									"key": "institute",
+									"value": "Firoza Bashar Ideal Institute",
+									"type": "text"
+								},
+								{
+									"key": "academic_year_start",
+									"value": "2016",
+									"type": "text"
+								},
+								{
+									"key": "academic_year_end",
+									"value": "2018",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/education/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"education",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.education.edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "degree",
+									"value": "SSC",
+									"type": "text"
+								},
+								{
+									"key": "institute",
+									"value": "Firoza Bashar Ideal Institute",
+									"type": "text"
+								},
+								{
+									"key": "academic_year_start",
+									"value": "2014",
+									"type": "text"
+								},
+								{
+									"key": "academic_year_end",
+									"value": "2016",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/education/31/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"education",
+								"31",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.education.delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/education/31",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"education",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.experiences.add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "designation",
+									"value": "Jr",
+									"type": "text"
+								},
+								{
+									"key": "company_name",
+									"value": "bdCalling IT Ltd.",
+									"type": "text"
+								},
+								{
+									"key": "experience_from",
+									"value": "2021",
+									"type": "text"
+								},
+								{
+									"key": "experience_to",
+									"value": "2023",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/experiences/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"experiences",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.experiences.edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "designation",
+									"value": "Laravel Developer",
+									"type": "text"
+								},
+								{
+									"key": "company_name",
+									"value": "IT",
+									"type": "text"
+								},
+								{
+									"key": "experience_from",
+									"value": "2021",
+									"type": "text"
+								},
+								{
+									"key": "experience_to",
+									"value": "2023",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/experiences/31/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"experiences",
+								"31",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.experiences.delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/experiences/32",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"experiences",
+								"32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.addresses.add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Khulna",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Bagerhat",
+									"type": "text"
+								},
+								{
+									"key": "province",
+									"value": "9300",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/addresses/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"addresses",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.addresses.edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Khulna",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Bagerhat",
+									"type": "text"
+								},
+								{
+									"key": "province",
+									"value": "9300",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/addresses/22/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"addresses",
+								"22",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.addresses.delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/addresses/22",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"addresses",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.upload-images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": "/C:/Users/bdCalling IT/Downloads/pat-whelen--9zbTfPFxoI-unsplash.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/upload-images",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"upload-images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile.delete-image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/delete-image/41",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"delete-image",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/alluserExceptLoginUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"alluserExceptLoginUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show-specfic-profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show_Multiple_Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"users\": [1, 3, 8]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/multiple-profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"multiple-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reaction",
+			"item": [
+				{
+					"name": "Like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/1/like",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"1",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dislike",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/2/dislike",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"2",
+								"dislike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "back",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profile/back",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"back"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notifications",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/notifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "who-likes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/who-likes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"who-likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "who-viewed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/who-viewed",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"who-viewed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fetch Data",
+			"item": [
+				{
+					"name": "looking-for",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-looking-for",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-looking-for"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "industry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-industry",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-industry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "years-of-experience",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-years-of-experience",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-years-of-experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "expertise",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-expertise",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-expertise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "support-offer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-support-offer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-support-offer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscriptions_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-subscriptions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Boost_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-boost",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-boost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/fetch-countries",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-cities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "USA",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/fetch-cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-states",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Dhaka",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/fetch-states",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-states"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-province",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "Bangladesh",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Rangpur",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Khulna Division",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/fetch-province",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"fetch-province"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Boost_&_Subscriptions",
+			"item": [
+				{
+					"name": "purchase-subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subscription_id",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/purchase-subscription",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase-subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchase-boost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "boost_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/boost/purchase",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boost",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjUwNTAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzI5MzMyOTYwLCJuYmYiOjE3MjkzMzI5NjAsImp0aSI6InNzc2dEdEVid1hOM000U1ciLCJzdWIiOiIxMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.8qNcHkNRs17-0gKUGf_UBYtotzOjo6ttZz_dvVwoXZ4",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://kaam.reigeeky.com/api",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://backend.yumibiz.com/api",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:5050/api",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

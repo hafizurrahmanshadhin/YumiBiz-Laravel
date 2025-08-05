@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class UserEducation extends Model {
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'user_id',
+        'degree',
+        'institute',
+        'academic_year_start',
+        'academic_year_end',
+    ];
+
+    protected $casts = [
+        'user_id' => 'string',
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'status',
+    ];
+
+    public function user(): BelongsTo {
+        return $this->belongsTo(User::class);
+    }
+}

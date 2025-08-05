@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class UserBoost extends Model {
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'boost_id',
+        'activated_at',
+        'expires_at',
+    ];
+
+    protected $casts = [
+        'user_id'  => 'string',
+        'boost_id' => 'string',
+    ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function boost() {
+        return $this->belongsTo(Boost::class);
+    }
+}
